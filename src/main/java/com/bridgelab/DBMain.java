@@ -1,8 +1,5 @@
-/*
-@author :ASIM AHAMMED
- */
-
 package com.bridgelab;
+
 
 import java.sql.Connection;
 import java.sql.Driver;
@@ -10,11 +7,18 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.Enumeration;
 
-public class EmployeePayroll {
+/**
+ * Purpose : To create employee payroll service database connectivity
+ *
+ * @author SUDIP PANJA
+ * @version 11.0.11
+ * @since 2021-10-06
+ */
+public class DBMain {
     public static void main(String[] args) {
-        String jdbcURL = "jdbc:mysql://localhost:3306/payroll_services?useSSL=false";
+        String jdbcURL = "jdbc:mysql://localhost:3306/payroll_service?useSSL=false";
         String userName = "root";
-        String password = "asim2123";
+        String password = "Sudip@2201";
         Connection connection;
 
         //checking the driver is loaded or not
@@ -30,7 +34,7 @@ public class EmployeePayroll {
         try {
             System.out.println("Connecting to database : " + jdbcURL);
             connection = DriverManager.getConnection(jdbcURL, userName, password);
-            System.out.println("Connection is successful!!!! " + connection);
+            System.out.println("Connection is successful!!!!" + connection);
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -47,4 +51,3 @@ public class EmployeePayroll {
         }
     }
 }
-
