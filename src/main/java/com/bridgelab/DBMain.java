@@ -1,5 +1,8 @@
-package com.bridgelab;
+/**
+ * @author ASIM AHAMMED
+ */
 
+package com.bridgelab;
 
 import java.sql.Connection;
 import java.sql.Driver;
@@ -7,13 +10,6 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.Enumeration;
 
-/**
- * Purpose : To create employee payroll service database connectivity
- *
- * @author SUDIP PANJA
- * @version 11.0.11
- * @since 2021-10-06
- */
 public class DBMain {
     public static void main(String[] args) {
         String jdbcURL = "jdbc:mysql://localhost:3306/payroll_service?useSSL=false";
