@@ -4,8 +4,6 @@
 
 package com.bridgelab;
 
-
-import java.time.LocalDate;
 import java.util.List;
 
 public class EmployeePayrollService {
@@ -30,22 +28,6 @@ public class EmployeePayrollService {
         if (ioService.equals(IOService.DB_IO))
             this.employeePayrollList = employeePayrollDBService.readData();
         return this.employeePayrollList;
-    }
-
-    /**
-     * Purpose : Retrieving the data up to given date range
-     *
-     * @param ioService : taking enum
-     * @param startDate : taking the starting date
-     * @param endDate   : taking the end date
-     * @return the details of the employees within the given range
-     * @throws EmployeePayrollException if the details of the employees are not found
-     */
-    public List<EmployeePayrollData> readEmployeePayrollDataForDateRange(IOService ioService,
-                                                                         LocalDate startDate, LocalDate endDate) throws EmployeePayrollException {
-        if (ioService.equals(IOService.DB_IO))
-            return employeePayrollDBService.getEmployeePayrollForDateRange(startDate, endDate);
-        return null;
     }
 
     /**

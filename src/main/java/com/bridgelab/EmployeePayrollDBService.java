@@ -1,5 +1,6 @@
 package com.bridgelab;
 
+
 import java.sql.*;
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -185,20 +186,6 @@ public class EmployeePayrollDBService {
     }
 
     /**
-     * Purpose : To read the data for a certain date range from the database
-     *
-     * @param startDate : taking the starting date
-     * @param endDate   : taking the end date
-     * @return the details of the employees
-     * @throws EmployeePayrollException if the details of the employees are not found
-     */
-    public List<EmployeePayrollData> getEmployeePayrollForDateRange(LocalDate startDate, LocalDate endDate) throws EmployeePayrollException {
-        String sql = String.format("SELECT * FROM employee_payroll WHERE start_date BETWEEN '%s' AND '%s';",
-                Date.valueOf(startDate), Date.valueOf(endDate));
-        return this.getEmployeePayrollDataUsingDB(sql);
-    }
-
-    /**
      * Purpose : To update the salary in the database using PreparedStatement Interface
      *
      * @param name   : takes the name of that particular employee
@@ -210,5 +197,3 @@ public class EmployeePayrollDBService {
         return this.updateEmployeeDataUsingPreparedStatement(name, salary);
     }
 }
-
-
