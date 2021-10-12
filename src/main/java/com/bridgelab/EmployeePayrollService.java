@@ -4,7 +4,12 @@
 
 package com.bridgelab;
 
+<<<<<<< HEAD
+=======
+import java.time.LocalDate;
+>>>>>>> UC6-Database_functions
 import java.util.List;
+import java.util.Map;
 
 public class EmployeePayrollService {
 
@@ -31,6 +36,90 @@ public class EmployeePayrollService {
     }
 
     /**
+<<<<<<< HEAD
+=======
+     * Purpose : Retrieving the data up to given date range
+     *
+     * @param ioService : taking enum
+     * @param startDate : taking the starting date
+     * @param endDate   : taking the end date
+     * @return the details of the employees within the given range
+     * @throws EmployeePayrollException if the details of the employees are not found
+     */
+    public List<EmployeePayrollData> readEmployeePayrollDataForDateRange(IOService ioService,
+                                                                         LocalDate startDate, LocalDate endDate) throws EmployeePayrollException {
+        if (ioService.equals(IOService.DB_IO))
+            return employeePayrollDBService.getEmployeePayrollForDateRange(startDate, endDate);
+        return null;
+    }
+
+    /**
+     * Purpose : To find the average salary of the employees assigned by gender
+     *
+     * @param ioService : takes the enum
+     * @return the actual values of the assigned employees
+     * @throws EmployeePayrollException if assigning employees details are not found
+     */
+    public Map<String, Double> readAverageSalaryByGender(IOService ioService) throws EmployeePayrollException {
+        if (ioService.equals(IOService.DB_IO))
+            return employeePayrollDBService.getAverageSalaryByGender();
+        return null;
+    }
+
+    /**
+     * Purpose : To find the minimum salary of the employees assigned by gender
+     *
+     * @param ioService : takes the enum
+     * @return the actual values of the assigned employees
+     * @throws EmployeePayrollException if assigning employees details are not found
+     */
+    public Map<String, Double> readMinimumSalaryByGender(IOService ioService) throws EmployeePayrollException {
+        if (ioService.equals(IOService.DB_IO))
+            return employeePayrollDBService.getMinimumSalaryByGender();
+        return null;
+    }
+
+    /**
+     * Purpose : To find the maximum salary of the employees assigned by gender
+     *
+     * @param ioService : takes the enum
+     * @return the actual values of the assigned employees
+     * @throws EmployeePayrollException if assigning employees details are not found
+     */
+    public Map<String, Double> readMaximumSalaryByGender(IOService ioService) throws EmployeePayrollException {
+        if (ioService.equals(IOService.DB_IO))
+            return employeePayrollDBService.getMaximumSalaryByGender();
+        return null;
+    }
+
+    /**
+     * Purpose : To find the total salary of the employees assigned by gender
+     *
+     * @param ioService : takes the enum
+     * @return the actual values of the assigned employees
+     * @throws EmployeePayrollException if assigning employees details are not found
+     */
+    public Map<String, Double> readSumOfSalaryByGender(IOService ioService) throws EmployeePayrollException {
+        if (ioService.equals(IOService.DB_IO))
+            return employeePayrollDBService.getTotalSalaryByGender();
+        return null;
+    }
+
+    /**
+     * Purpose : To find the total number of the employees assigned by gender
+     *
+     * @param ioService : takes the enum
+     * @return the actual values of the assigned employees
+     * @throws EmployeePayrollException if assigning employees details are not found
+     */
+    public Map<String, Double> readTotalNumOfEmployeesByGender(IOService ioService) throws EmployeePayrollException {
+        if (ioService.equals(IOService.DB_IO))
+            return employeePayrollDBService.getTotalNumOfEmployeesByGender();
+        return null;
+    }
+
+    /**
+>>>>>>> UC6-Database_functions
      * Purpose : To update the employee salary in the database
      *
      * @param name   : taking name of the employee
